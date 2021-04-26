@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Validation</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+           <div class="col-sm-4  mx-auto">
+             <form action="" id="form1">
+<input type="text" name="myName" id="myName" placeholder="enter your name" class="form-control" autocomplete="off">
+<input type="Submit" value="Submit" class="btn btn-primary btn-block" >
+
+             </form>
+           </div>
+
+        </div>
+
+    </div>
+
+
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="/home/rexweb/Documents/form validation plugin/ jquery.validate.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <script src="/home/rexweb/Documents/form validation plugin/ jquery.validate.js"></script>
+ 
+ <script>
+     $(document).ready(function(){
+         $("#form1").validate({
+               rules:{
+                   myName:{
+                       required:true
+                   }
+               }  
+             }
+         );
+        });
+ </script>
+
+
+</body>
+</html>
