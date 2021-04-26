@@ -1,0 +1,141 @@
+<html>
+      <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+        
+      </head>
+       <body>
+           <title>Form validation</title>
+           <h1 class="text-success text-center">Form validation in java script</h1><br> 
+           <div class="container"><br>
+               <div class="col-lg-8 m-150 d-block">
+                  <form action="#" onsubmit="return validation()">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" name="user" id="user" class="form-control">
+                        <span id="error" class="text-danger font-weight-bold"></span>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" name="pass" id="pass" class="form-control">
+                        <span id="error1" class="text-danger " ></span>
+                    </div>
+                    <div>
+                        <label>Confirm password:</label>
+                        <input type="password" name="conpass" id="conpass" class="form-control">
+                        <span id="error2" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label>email:</label>
+                        <input type="text" name="email" id="email" class="form-control">
+                        <span id="error3" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label>Phone:</label>
+                        <input type="number" name="phone" id="phone" class="form-control">
+                        <span id="error4" class="text-danger"></span>
+                    </div>
+                    <input type="submit" name="submit" value="submit" class="btn btn-info">
+
+                  </form>
+               </div>
+           </div>
+           <script type="text/javascript">
+
+function validation()
+
+{ 
+    var username=document.getElementById("user").value;
+    var error1=document.getElementById("pass").value;
+    var error2=document.getElementById("conpass").value;
+    var error3=document.getElementById("email").value;
+    var error4=document.getElementById("phone").value;
+    
+    if(username=="")
+    {
+        document.getElementById("error").innerHTML="**please enter your name";
+         return false;
+    }
+    if((username.length<=2)||(username.length>20))
+    {
+        document.getElementById("error").innerHTML="**username must be between 2 and 20";
+         return false;
+    }
+    if(!isNaN(username))
+    {
+        document.getElementById("error").innerHTML="**username must be a characters ";
+         return false;
+    }
+
+  
+    
+    if(error1=="")
+    {
+        document.getElementById("error1").innerHTML="**please enter the password";
+         return false;
+    }
+    if(( error1.length<=6)|| (error1.length>20))
+    {
+        document.getElementById("error1").innerHTML="**please enter value between 6 and 20";
+         return false;
+    }
+    if(error1!=error2)
+    {
+        document.getElementById("error2").innerHTML="**password is not matching";
+         return false;
+    }
+
+
+    if(error2=="")//to confirm we have to give same id as conpass to pass
+    {
+        document.getElementById("error2").innerHTML="**please confirm it";
+         return false;
+    }
+
+    if(error3=="")
+    {
+        document.getElementById("error3").innerHTML="**please enter email";
+         return false;
+    }
+    if(error3.indexOf('@')<=0)
+    {
+    document.getElementById("error3").innerHTML="**@ invalid position";
+         return false;
+    }
+ 
+    
+    
+     if((error3.charAt(error3.length-4)!='.' ) && (error3.charAt(error3.length-3)!= '.')) 
+     {
+    document.getElementById("error3").innerHTML="**. invalid position";
+         return false;
+     }
+
+ 
+    if(error4=="")
+    {
+        document.getElementById("error4").innerHTML="**please enter number";
+         return false;
+    }
+    if(isNaN(error4))
+    {
+        document.getElementById("error4").innerHTML="**please enter digit and not character";
+         return false;
+    }
+    if(error4.length!=10)
+    {
+        document.getElementById("error4").innerHTML="**phone no must be of 10-digit";
+         return false;
+    }
+    
+    
+ }
+
+           </script>
+
+       </body>
+        
+</html>
